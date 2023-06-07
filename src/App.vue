@@ -22,12 +22,15 @@ export default {
         // FUNZIONE PER IL GIUSTO API PER STAMPARE LA CARDS IN BASE ALLA CONDIZIONE
         getCards () {
             let myurl = store.apiUrl;
-            // SE IL VALORE DI SELECT E' DIVERSO DA VUOTO
+            // SE IL VALORE DI SEARCHMOVIE E' DIVERSO DA VUOTO
             if(store.searchMovie !== "") {
                 // ALLORA AGGIUNGI ALL'API IL PARAMETRO E IL VALORE DI ESSO
-                myurl += `?api_key=${store.keyApiParameter}&query=${store.searchMovie}`
-                
+                myurl += `?api_key=${store.keyApiParameter}&query=${store.searchMovie}`    
             }
+            else{
+                myurl += `?api_key=${store.keyApiParameter}` 
+            }
+
             axios.get(myurl)
             .then(res => {
                 store.movieList = res.data.results;
@@ -35,7 +38,8 @@ export default {
             .catch(err => {
                 console.log(err);
             })
-        }
+        },
+
     },
     created() {
         this.getCards();

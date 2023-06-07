@@ -18,8 +18,8 @@ export default {
         <h1>BOOLFIX</h1>
 
         <div class="search">
-            <input type="search" placeholder="Ricerca film" v-model.trim="store.searchMovie" @click="$emit('mysearch')">
-            <button>INVIA</button>
+            <input type="search" placeholder="Ricerca film" v-model.trim="store.searchMovie">
+            <button @click="$emit('mysearch')">INVIA</button>
         </div>
 
     </header>
