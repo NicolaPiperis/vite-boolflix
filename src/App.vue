@@ -17,13 +17,37 @@ export default {
         // ACCESSO AI DATI DELLO STORAGE PRINCIPALE
         store
         }
+    },
+    methods : {
+        // FUNZIONE PER IL GIUSTO API PER STAMPARE LA CARDS IN BASE ALLA CONDIZIONE
+        getCards () {
+            let myurl = store.apiUrl;
+            // SE IL VALORE DI SELECT E' DIVERSO DA VUOTO
+            if(store.searchMovie !== "") {
+                // ALLORA AGGIUNGI ALL'API IL PARAMETRO E IL VALORE DI ESSO
+                myurl += `?api_key=${store.keyApiParameter}&query=${store.searchMovie}`
+                
+            }
+            axios.get(myurl)
+            .then(res => {
+                store.movieList = res.data.results;
+            })
+            .catch(err => {
+                console.log(err);
+            })
+        }
+    },
+    created() {
+        this.getCards();
     }
 }
 </script>
 
 <template>
-  <AppHeader/>
-  <AppMain/>
+
+    <AppHeader/>
+    <AppMain @mysearch="getCards"/>
+
 </template>
 
 <style lang="scss">

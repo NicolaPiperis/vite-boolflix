@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-    <cardMovie/>
+    <cardMovie v-for="(movie, index) in store.movieList" :key="movie.id" :details="movie"/>
 </template>
 
 <style scoped lang="scss">

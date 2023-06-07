@@ -1,6 +1,13 @@
 <script>
+import { store } from '../store.js'
 export default {
-    name : "AppHeader"
+    name : "AppHeader",
+    data() {
+        return{
+        // ACCESSO AI DATI DELLO STORAGE PRINCIPALE
+        store
+        }
+    }
 }
 </script>
 
@@ -11,7 +18,7 @@ export default {
         <h1>BOOLFIX</h1>
 
         <div class="search">
-            <input type="search" placeholder="Ricerca film">
+            <input type="search" placeholder="Ricerca film" v-model.trim="store.searchMovie" @click="$emit('mysearch')">
             <button>INVIA</button>
         </div>
 

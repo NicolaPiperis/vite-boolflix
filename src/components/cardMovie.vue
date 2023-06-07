@@ -1,6 +1,9 @@
 <script>
 export default {
-    name : "cardMovie"
+    name : "cardMovie",
+    props: {
+        details: Object 
+    }
 }
 </script>
 
@@ -8,17 +11,17 @@ export default {
 
     <div class="card">
 
-        <img src="../../public/superman.jpeg" alt="info image">
+        <img :src="details.poster_path" alt="info image">
 
         <ul class="info_movie">
 
-            <li class="name">Super Man</li>
+            <li class="name">{{ details.title }}</li>
 
-            <li class="original_name">Superman L'uomo d'acciaio</li>
+            <li class="original_name">{{ details.original_title }}</li>
 
-            <li class="language">ITA</li>
+            <li class="language">{{ details.original_language }}</li>
 
-            <li class="overall">4</li>
+            <li class="overall">{{ details.vote_average }}</li>
 
         </ul>
 
