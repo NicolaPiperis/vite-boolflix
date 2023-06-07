@@ -1,6 +1,6 @@
 <script>
 // CHIAMATA AL FILE JS STORE COME STORAGE DI RIFERIMENTO
-import { store } from './store.js'
+import { store } from '../store.js'
 import cardMovie from './cardMovie.vue'
 
 export default {
@@ -13,7 +13,7 @@ export default {
         // ACCESSO AI DATI DELLO STORAGE PRINCIPALE
         store
         }
-    },
+    }
 }
 </script>
 
