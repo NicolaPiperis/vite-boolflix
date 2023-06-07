@@ -19,7 +19,7 @@ export default {
 
         <div class="search">
             <input type="search" placeholder="Ricerca film" v-model.trim="store.searchMovie">
-            <button @click="$emit('mysearch')">INVIA</button>
+            <button @click.prevent="$emit('mysearch')">INVIA</button>
         </div>
 
     </header>

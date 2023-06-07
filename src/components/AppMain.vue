@@ -18,9 +18,27 @@ export default {
 </script>
 
 <template>
-    <cardMovie v-for="(movie, index) in store.movieList" :key="movie.id" :details="movie"/>
+
+    <main>
+
+        <div class="card_container">
+
+            <cardMovie v-for="(movie, index) in store.movieList" :key="movie.id" :details="movie"/>
+
+        </div>
+
+    </main>
+
 </template>
 
 <style scoped lang="scss">
+
+    .card_container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 50px 50px;
+        text-align: center;
+    }
 
 </style>

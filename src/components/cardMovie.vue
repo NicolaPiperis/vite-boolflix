@@ -11,7 +11,7 @@ export default {
 
     <div class="card">
 
-        <img :src="details.poster_path" alt="info image">
+        <img src="" alt="info image">
 
         <ul class="info_movie">
 
@@ -33,9 +33,9 @@ export default {
 
     .card{
         height: 500px;
-        width: calc((100% / 5) - 100px);
+        width: calc((100% / 5) - 30px);
         background-color: aqua;
-        margin: 50px 100px;
+        
 
         img{
             height: 300px;
