@@ -9,15 +9,17 @@ export default {
 
 <template>
 
+    
+
     <div class="card">
 
         <img src="" alt="info image">
 
         <ul class="info_movie">
 
-            <li class="name">{{ details.title }}</li>
+            <li class="name">{{ details.title || details.name}}</li>
 
-            <li class="original_name">{{ details.original_title }}</li>
+            <li class="original_name">{{ details.original_title || details.original_name}}</li>
 
             <li class="language">
                 <!-- {{ details.original_language }} -->

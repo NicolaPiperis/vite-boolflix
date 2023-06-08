@@ -21,24 +21,33 @@ export default {
     methods : {
         // FUNZIONE PER IL GIUSTO API PER STAMPARE LA CARDS IN BASE ALLA CONDIZIONE
         getCards () {
+            //MOVIE
             let myurl = store.apiUrl + `?api_key=${store.keyApiParameter}&query=`;
-
             // SE IL VALORE DI SEARCHMOVIE E' DIVERSO DA VUOTO
             if(store.searchMovie !== "") {
                 // ALLORA AGGIUNGI ALL'API IL PARAMETRO E IL VALORE DI ESSO
                 myurl += `?api_key=${store.keyApiParameter}&query=${store.searchMovie}`    
             }
-
             axios.get(myurl)
             .then(res => {
                 store.movieList = res.data.results;
             })
+
+            // TV SERIES
+            let myurlTvSeries = store.apiTvSeriesUrl + `?api_key=${store.keyApiParameter}&query=`;
+            if(store.searchMovie !== "") {
+                // ALLORA AGGIUNGI ALL'API IL PARAMETRO E IL VALORE DI ESSO
+                myurlTvSeries += `?api_key=${store.keyApiParameter}&query=${store.searchMovie}`    
+            }
+            axios.get(myurlTvSeries)
+            .then(res => {
+                store.movieList = res.data.results;
+            })
+
+
             .catch(err => {
                 console.log(err);
             })
-
-            // DOPO IL CLICK SVUOTO LA BARRA DI RICERCA
-            store.searchMovie = "";
         },
         itworks() {
             console.log("funziona")
