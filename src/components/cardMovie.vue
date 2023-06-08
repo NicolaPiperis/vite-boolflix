@@ -13,7 +13,7 @@ export default {
 
     <div class="card">
 
-        <img src="" alt="info image">
+        <img :src="`https://image.tmdb.org/t/p/w500${details.poster_path}`" alt="info image">
 
         <ul class="info_movie">
 
