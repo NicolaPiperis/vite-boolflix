@@ -17,9 +17,11 @@ export default {
 
         <ul class="info_movie">
 
-            <li class="name">{{ details.title || details.name}}</li>
+            <li v-if="details.title" class="name">{{ details.title }}</li>
+            <li v-else class="name">{{ details.name }}</li>
 
-            <li class="original_name">{{ details.original_title || details.original_name}}</li>
+            <li v-if="details.original_title" class="original_name">{{ details.original_title }}</li>
+            <li v-else class="original_name">{{ details.original_name }}</li>
 
             <li class="language">
                 <!-- {{ details.original_language }} -->

@@ -25,6 +25,7 @@ export default {
 
             <cardMovie v-for="(movie, index) in store.movieList" :key="movie.id" :details="movie"/>
 
+
         </div>
 
     </main>
