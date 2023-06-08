@@ -36,6 +36,9 @@ export default {
             .catch(err => {
                 console.log(err);
             })
+
+            // DOPO IL CLICK SVUOTO LA BARRA DI RICERCA
+            store.searchMovie = "";
         },
         itworks() {
             console.log("funziona")
