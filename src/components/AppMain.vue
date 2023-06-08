@@ -23,8 +23,7 @@ export default {
 
         <div class="card_container">
 
-            <cardMovie v-for="(movie, index) in store.movieList" :key="movie.id" :details="movie"/>
-
+            <cardMovie v-for="(movie, index) in store.cinemaList" :key="movie.id" :details="movie"/>
 
         </div>
 

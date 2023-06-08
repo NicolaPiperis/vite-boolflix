@@ -41,7 +41,8 @@ export default {
             }
             axios.get(myurlTvSeries)
             .then(res => {
-                store.movieList = res.data.results;
+                store.tvSeriesList = res.data.results;
+                store.cinemaList = store.movieList.concat(store.tvSeriesList);
             })
 
 

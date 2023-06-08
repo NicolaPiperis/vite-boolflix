@@ -8,6 +8,7 @@ export const store = reactive({
     apiTvSeriesUrl : 'https://api.themoviedb.org/3/search/tv',
     searchMovie: '',
 
-    // CONTIENE ANCHE LE SERIE TV
-    movieList : []
+    tvSeriesList : [],
+    movieList : [],
+    cinemaList : []
 });
