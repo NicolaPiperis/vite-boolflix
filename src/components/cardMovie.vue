@@ -3,6 +3,26 @@ export default {
     name : "cardMovie",
     props: {
         details: Object 
+    },
+    methods : {
+        getStars () {
+            // DIVISIONE PER 2 AFFINCHE' NON SIA PIU' GRANDE DI 5
+            this.details.vote_average = this.details.vote_average / 2;
+
+            // TRANSFORMO DA STRINGA A NUMERO ED ELIMINO I NUMERI DOPO LA VIRGOLA
+            this.details.vote_average = parseInt(this.details.vote_average.toFixed(0))
+
+            // for (let i = this.details.vote_average; i <= 1 ; i--) {
+            //     this.details.vote_average += "*";
+            // }
+
+
+
+            console.log(this.details.vote_average);
+        }
+    },
+    created() {
+        this.getStars();
     }
 }
 </script>
@@ -31,7 +51,7 @@ export default {
                 
             </li>
 
-            <li class="overall">{{ details.vote_average }}</li>
+            <li class="overall">{{ this.details.vote_average }}</li>
 
         </ul>
 
